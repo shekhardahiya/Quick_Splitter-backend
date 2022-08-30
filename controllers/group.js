@@ -41,7 +41,7 @@ exports.createGroup = async (req, res, next) => {
         .sort({ groupId: -1 })
         .then((lastGroupId) => {
             //   console.log(lastGroupId);
-            req.body.groupId = lastGroupId.groupId + 1;
+            req.body.groupId = lastGroupId ? lastGroupId.groupId + 1 : 1;
             return req;
         })
         .then((req) => {

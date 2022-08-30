@@ -15,9 +15,13 @@ var UserSchema = new mongoose.Schema({
     required: true,
     // unique: true,
   },
+  userName: {
+    type: String,
+    required: true,
+  },
 
-  groupsInvolved:{
-    type:Array,
+  groupsInvolved: {
+    type: Array,
     // required:true
   },
   createdDate: {

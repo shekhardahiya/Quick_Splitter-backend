@@ -24,8 +24,7 @@ exports.createTransaction = async (req, res, next) => {
         .select("transactionId")
         .sort({ transactionId: -1 })
         .then((lasttransactionId) => {
-            console.log(lasttransactionId);
-            req.body.transactionId = lasttransactionId.transactionId + 1;
+            req.body.transactionId = lasttransactionId ? lasttransactionId.transactionId + 1 : 1;
             return req;
         })
         .then((req) => {

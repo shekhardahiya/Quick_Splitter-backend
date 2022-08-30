@@ -24,16 +24,17 @@ exports.createUser = async (req, res, next) => {
         .select("userId")
         .sort({ userId: -1 })
         .then((lastuserId) => {
-            console.log(lastuserId);
-            req.body.userId = lastuserId.userId + 1;
+            req.body.userId = lastuserId ? lastuserId.userId + 1 : 1;
             return req;
         })
         .then((req) => {
             User.create(req.body); res
                 .status(201).json({ code: 200, message: "User Created Succesfully" });
         })
-        .catch((error) => {res.json(error)
-        console.log('hi error',error);});
+        .catch((error) => {
+            res.json(error)
+            console.log('hi error', error);
+        });
 };
 
 
