@@ -14,7 +14,7 @@ var TransactionSchema = new mongoose.Schema({
         required: true
     },
     initiatedBy: {
-        type: String,
+        type: Object,
         required: true
     },
     amount: {
