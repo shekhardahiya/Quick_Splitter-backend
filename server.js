@@ -3,6 +3,8 @@ const connectDB = require("./config/db");
 const group = require('./routes/groups')
 const transaction = require('./routes/transaction')
 const user = require('./routes/user')
+const comments = require('./routes/comments')
+
 connectDB();
 const cors = require('cors');
 
@@ -15,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 app.use("/api/v1/bills", group)
 app.use("/api/v1/bills", transaction)
 app.use("/api/v1/bills", user)
-
+app.use("/api/v1/bills", comments)
 app.get("/", (req, res) => {
   res.send("Hello world")
 })

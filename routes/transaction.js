@@ -1,15 +1,17 @@
 const express = require("express");
 const {
   createTransaction,
+  getAllTransaction,
   getTransaction,
-//   updateComment,
-//   deleteComment,
+  updateTransaction,
+  //   deleteComment,
 } = require("../controllers/transaction");
 const router = express.Router();
 
-router.route("/:groupId/Transaction").get(getTransaction);
+router.route("/:groupId/allTransaction").get(getAllTransaction);
+router.route("/:transactionId/Transaction").get(getTransaction);
 router.route("/Transaction").post(createTransaction);
-// router.route("/Comments").put(updateComment);
+router.route("/Transaction").put(updateTransaction);
 // router.route("/Comments/:commentId").delete(deleteComment);
 
 module.exports = router;
