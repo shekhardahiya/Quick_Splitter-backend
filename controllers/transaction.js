@@ -2,7 +2,7 @@ const { response } = require("express");
 const Transaction = require("../models/transaction");
 
 
-exports.getTransaction = async (req, res, next) => {
+exports.getAllTransaction = async (req, res, next) => {
     await Transaction.find({ groupId: req.params.groupId })
         .then((docs) =>
             res.status(200).json({
