@@ -20,7 +20,6 @@ exports.getAllComments = async (req, res, next) => {
 
 
 exports.createComment = async (req, res, next) => {
-    console.log("here");
     await Comments.findOne()
         .select("commentId")
         .sort({ commentId: -1 })
