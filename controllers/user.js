@@ -94,7 +94,7 @@ exports.sendinvite = async (req, res, next) => {
             from: 'quicksplittor@gmail.com',//replace with your email
             to: req.body.userEmailId,//replace with your email
             subject: `Join Quick Splitter`,
-            html: '<p> Hi </p> <p>Join Quick Splittor and Start splitting your expenses.</p><a href="https://learnandinvest.in">Click Here<a/>',
+            html: '<p> Hi </p> <p>Join Quick Splittor and Start splitting your expenses.</p><a href="https://billsplitter.learnandinvest.in/">Click Here<a/>',
 
         };
 
