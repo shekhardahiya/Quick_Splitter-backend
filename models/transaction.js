@@ -29,6 +29,9 @@ var TransactionSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    upiId: {
+        type: String
+    }
 });
 
 var Transaction = mongoose.model("Transaction", TransactionSchema);
