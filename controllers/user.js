@@ -73,7 +73,6 @@ exports.sendinvite = async (req, res, next) => {
         res.status(401).json({ error: "User Exist" });
 
     } else {
-        console.log('inside');
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -104,10 +103,8 @@ exports.sendinvite = async (req, res, next) => {
 
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                console.log(error);
                 res.status(401).json(error); // if error occurs send error as response to client
             } else {
-                console.log('Email sent: ' + info.response);
                 res.status(200).json({ message: 'Sent Successfully' })//if mail is sent successfully send Sent successfully as response
             }
         });
